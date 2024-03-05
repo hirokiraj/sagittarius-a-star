@@ -4,7 +4,7 @@
 ## Initial requirements
 This repo contains a set of dotfile configurations that by default require:
 - working on Mac OS
-- running [Alacritty](https://alacritty.org/) terminal emulator
+- running [Alacritty](https://alacritty.org/) terminal emulator with [tmux](https://github.com/tmux/tmux/wiki)
 - using zsh as a default system shell
 - having [oh-my-zsh](https://ohmyz.sh/) and [powerline10k](https://github.com/romkatv/powerlevel10k) theme installed
 - having [karabiner-elements](https://karabiner-elements.pqrs.org/) installed as a keyboard remapper
