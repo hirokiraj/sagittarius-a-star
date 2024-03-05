@@ -4,7 +4,7 @@
 ## Initial requirements
 This repo contains a set of dotfile configurations that by default require:
 - working on Mac OS
-- running [iTerm2](https://iterm2.com/) terminal emulator
+- running [Alacritty](https://alacritty.org/) terminal emulator
 - using zsh as a default system shell
 - having [oh-my-zsh](https://ohmyz.sh/) and [powerline10k](https://github.com/romkatv/powerlevel10k) theme installed
 - having [karabiner-elements](https://karabiner-elements.pqrs.org/) installed as a keyboard remapper
@@ -22,7 +22,7 @@ Install GNU stow
 `brew install stow`
 
 And use stow to symlink all configs as if these are stow packages
-`cd ~/sagittarius-a-star && stow asdf karabiner p10k vim zsh`
+`cd ~/sagittarius-a-star && stow alacritty asdf karabiner p10k vim zsh`
 
-Restart all terminal sessions and your are good to go!
+Your are good to go!
 
