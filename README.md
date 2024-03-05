@@ -11,7 +11,12 @@ This repo contains a set of dotfile configurations that by default require:
 - using asdf as a languages version manager
 
 ## Font
-Main terminal font used in Iterm2 for this setup is MesloLGS NF (NerdFont), you should install [all available variants from powerlevel10k repo](https://github.com/romkatv/dotfiles-public/tree/master/.local/share/fonts/NerdFonts)
+This config will look nice with a NerdFont installed.
+Any font from [nerdfonts.com](https://www.nerdfonts.com/) should do, but I am using Meslo LG, in particual:
+- medium line gap variant so MesloLGM
+- mono variant (standard uses 1.5 chars glyps, mono enforces glyps to take 1 space)
+- slashed zero variant (not a dotted-zero subvariant)
+- I install all four (bold, regualar, italic, bold-italic) types, but use mostly a regular one
 
 ## Env setup
 Clone this repo to home directory
