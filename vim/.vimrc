@@ -8,9 +8,6 @@ syntax enable
 set encoding=utf-8
 set showcmd
 
-set background=dark
-colorscheme solarized
-
 set number relativenumber
 
 augroup numbertoggle
