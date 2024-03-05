@@ -14,15 +14,15 @@ This repo contains a set of dotfile configurations that by default require:
 Main terminal font used in Iterm2 for this setup is MesloLGS NF (NerdFont), you should install [all available variants from powerlevel10k repo](https://github.com/romkatv/dotfiles-public/tree/master/.local/share/fonts/NerdFonts)
 
 ## Env setup
-Clone this repo to `$HOME`
+Clone this repo to home directory
 
-`cd $HOME && git clone git@github.com:hirokiraj/sagittarius-a-star.git`
+`cd ~ && git clone git@github.com:hirokiraj/sagittarius-a-star.git`
 
 Install GNU stow
 `brew install stow`
 
 And use stow to symlink all configs as if these are stow packages
-`cd $HOME/sagittarius-a-star && stow asdf karabiner p10k vim zsh`
+`cd ~/sagittarius-a-star && stow asdf karabiner p10k vim zsh`
 
 Restart all terminal sessions and your are good to go!
 
