@@ -10,24 +10,19 @@ This repo contains a set of dotfile configurations that by default require:
 - having [karabiner-elements](https://karabiner-elements.pqrs.org/) installed as a keyboard remapper
 - using asdf as a languages version manager
 
-
 ## Font
 Main terminal font used in Iterm2 for this setup is MesloLGS NF (NerdFont), you should install [all available variants from powerlevel10k repo](https://github.com/romkatv/dotfiles-public/tree/master/.local/share/fonts/NerdFonts)
-
 
 ## Env setup
 Clone this repo to `$HOME`
 
 `cd $HOME && git clone git@github.com:hirokiraj/sagittarius-a-star.git`
 
-then prepare directory structure in your home
+Install GNU stow
+`brew install stow`
 
-`mkdir $HOME/.config && mkdir $HOME/.config/karabiner`
+And use stow to symlink all configs as if these are stow packages
+`cd $HOME/sagittarius-a-star && stow asdf karabiner p10k vim zsh`
 
-and then symlink all dotfiles to their corresponding locations
-
-`ln -s $HOME/sagittarius-a-star/zsh/.zshrc $HOME/.zshrc && ln -s $HOME/sagittarius-a-star/vim/.vimrc $HOME/.vimrc && ln -s $HOME/sagittarius-a-star/p10k/.p10k.zsh $HOME/.p10k.zsh && ln -s $HOME/sagittarius-a-star/karabiner/.config/karabiner/karabiner.json $HOME/.config/karabiner/karabiner.json && $HOME/sagittarius-a-star/asdf/.asdfrc $HOME/.asdfrc`
-
-Restart all terminal sessions and your are good to go
-
+Restart all terminal sessions and your are good to go!
 
