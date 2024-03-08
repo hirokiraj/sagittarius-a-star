@@ -3,7 +3,7 @@ import = [
 ]
 
 [window]
-padding = { x = 15, y = 10 }
+padding = { x = 15, y = 0 }
 dynamic_padding = true
 decorations = "buttonless"
 startup_mode = "Fullscreen" 
@@ -14,7 +14,7 @@ multiplier = 5
 
 [font]
 normal = { family = "MesloLGM Nerd Font", style = "Regular" }
-size = 14
+size = 16
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
