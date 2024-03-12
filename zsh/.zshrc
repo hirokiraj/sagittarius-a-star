@@ -28,8 +28,5 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# capybara too many files open
-ulimit -n 65536
-
 # asdf script execution
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
