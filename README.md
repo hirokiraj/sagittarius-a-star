@@ -9,6 +9,7 @@ This repo contains a set of dotfile configurations that by default require:
 - having [oh-my-zsh](https://ohmyz.sh/) and [powerline10k](https://github.com/romkatv/powerlevel10k) theme installed
 - having [karabiner-elements](https://karabiner-elements.pqrs.org/) installed as a keyboard remapper
 - using asdf as a languages version manager
+- installing neovim together with [kickstart config](https://github.com/nvim-lua/kickstart.nvim)
 
 ## Font
 This config will look nice with a NerdFont installed.
@@ -26,8 +27,11 @@ Clone this repo to home directory
 Install GNU stow
 `brew install stow`
 
+Move original `init.lua` from kickstart aside to make space
+`mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.original`
+
 And use stow to symlink all configs as if these are stow packages
-`cd ~/sagittarius-a-star && stow alacritty asdf karabiner p10k vim zsh`
+`cd ~/sagittarius-a-star && stow alacritty asdf karabiner p10k vim zsh nvim`
 
 Your are good to go!
 
