@@ -151,6 +151,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Minimal netrw setup for nvim-tree plugin
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -827,6 +831,17 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
+  {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('nvim-tree').setup {}
+    end,
+  },
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
@@ -848,6 +863,30 @@ require('lazy').setup({
     },
   },
 })
+
+local transform_mod = require('telescope.actions.mt').transform_mod
+local actions = require 'telescope.actions'
+local mod = {}
+mod.open_in_nvim_tree = function(_)
+  local cur_win = vim.api.nvim_get_current_win()
+  vim.cmd 'NvimTreeFindFile'
+  vim.api.nvim_set_current_win(cur_win)
+end
+
+mod = transform_mod(mod)
+
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ['<CR>'] = actions.select_default + mod.open_in_nvim_tree,
+      },
+      n = {
+        ['<CR>'] = actions.select_default + mod.open_in_nvim_tree,
+      },
+    },
+  },
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
