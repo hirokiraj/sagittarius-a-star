@@ -256,6 +256,18 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'eol',
+        delay = 100,
+        ignore_whitespace = false,
+        virt_text_priority = 100,
+      },
+      current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> 󰇙 <summary>',
+      current_line_blame_formatter_opts = {
+        relative_time = true,
+      },
     },
   },
 
@@ -886,6 +898,27 @@ require('telescope').setup {
       },
     },
   },
+}
+
+require('gitsigns').setup {
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    map('n', '<leader>hb', function()
+      gs.blame_line { full = true }
+    end, { desc = '[b]lame fully current line' })
+    map('n', '<leader>ht', gs.toggle_current_line_blame, { desc = '[t]oggle current line blame' })
+    map('n', '<leader>hd', gs.diffthis, { desc = 'show [d]iff against last commit' })
+    map('n', '<leader>hD', function()
+      gs.diffthis '~'
+    end, { desc = 'show [D]iff against ~HEAD' })
+  end,
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
