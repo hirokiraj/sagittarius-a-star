@@ -10,6 +10,7 @@ This repo contains a set of dotfile configurations that by default require:
 - having [karabiner-elements](https://karabiner-elements.pqrs.org/) installed as a keyboard remapper
 - using asdf as a languages version manager
 - installing neovim together with [kickstart config](https://github.com/nvim-lua/kickstart.nvim)
+- installing [oh-my-posh](https://ohmyposh.dev) for terminal prompt line configuration
 
 ## Font
 This config will look nice with a NerdFont installed.
@@ -31,7 +32,7 @@ Move original `init.lua` from kickstart aside to make space
 `mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.original`
 
 And use stow to symlink all configs as if these are stow packages
-`cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim`
+`cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh`
 
 Your are good to go!
 
