@@ -13,7 +13,7 @@ history = 100000
 multiplier = 5
 
 [font]
-normal = { family = "MesloLGM Nerd Font", style = "Regular" }
+normal = { family = "MesloLGM Nerd Font Mono", style = "Regular" }
 size = 16
 
 [cursor]
