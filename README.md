@@ -41,5 +41,12 @@ Move original `init.lua` from kickstart aside to make space
 And use stow to symlink all configs as if these are stow packages
 `cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux`
 
+## Post setup actions
+If above setup was successful there are some additional manual steps that need to be done:
+
+**tmux** -> requires installing tpm and sourcing with it all the plugins mentioned in config:
+
+Run `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`, open alacritty, run `tmux` and install plugins with `ctrl-b I` (capital i)
+
 Your are good to go!
 
