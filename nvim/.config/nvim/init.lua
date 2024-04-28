@@ -592,7 +592,7 @@ require("lazy").setup({
 						},
 					},
 				},
-				ruby_ls = {
+				ruby_lsp = {
 					cmd = { os.getenv("HOME") .. "/.asdf/shims/ruby-lsp", "stdio" },
 				},
 			}
