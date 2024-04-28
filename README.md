@@ -32,7 +32,7 @@ Move original `init.lua` from kickstart aside to make space
 `mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.original`
 
 And use stow to symlink all configs as if these are stow packages
-`cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh`
+`cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux`
 
 Your are good to go!
 
