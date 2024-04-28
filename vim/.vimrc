@@ -1,7 +1,6 @@
 set nocompatible
 filetype off
 
-execute pathogen#infect()
 filetype plugin indent on
 
 syntax enable
