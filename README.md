@@ -12,6 +12,13 @@ This repo contains a set of dotfile configurations that by default require:
 - installing neovim together with [kickstart config](https://github.com/nvim-lua/kickstart.nvim)
 - installing [oh-my-posh](https://ohmyposh.dev) for terminal prompt line configuration
 
+## Installing packages and apps with bootstrap script
+Most of required software mentioned above, together with others used by me, can be easily installed by running a shell script provided in this repo.
+
+Make sure script can be executed: `cd ~/sagittarius-a-star && chmod +x singularity.zsh`
+
+After that run the script with `./singularity.zsh`
+
 ## Font
 This config will look nice with a NerdFont installed.
 Any font from [nerdfonts.com](https://www.nerdfonts.com/) should do, but I am using Meslo LG, in particual:
