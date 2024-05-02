@@ -3,10 +3,10 @@ import = [
 ]
 
 [window]
-padding = { x = 15, y = 0 }
+padding = { x = 15, y = 10 }
 dynamic_padding = true
 decorations = "buttonless"
-startup_mode = "Fullscreen" 
+startup_mode = "Maximized" 
 
 [scrolling]
 history = 100000
