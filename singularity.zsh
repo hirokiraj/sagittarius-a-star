@@ -28,10 +28,11 @@ echo "    tig (git repo cli explorer)"
 echo "    tmux (terminal multiplicator)" 
 echo "    vim (slightly worse text editor)" 
 echo "    wget (internet file fetcher)"
+echo "    ripgrep (used by telescope in neovim)"
 echo "  Do you wish to install all these packages?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
-        Yes ) brew install asdf btop git imagemagick ncdu neovim oh-my-posh pre-commit stow tig tmux vim wget; break;;
+        Yes ) brew install asdf btop git imagemagick ncdu neovim oh-my-posh pre-commit stow tig tmux vim wget ripgrep; break;;
         No ) break;;
         Cancel ) exit;;
     esac
