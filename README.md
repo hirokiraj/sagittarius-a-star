@@ -1,19 +1,16 @@
 # Saggitarius-A* - hirokiraj's dotfiles collection
 ```...Sagittarius A* is mostly dormant and only occasionally absorbs gas or dust, but nonetheless has an estimated mass millions times that of our sun...```
 
-## Initial requirements
-This repo contains a set of dotfile configurations that by default require:
-- working on Mac OS
-- running [Alacritty](https://alacritty.org/) terminal emulator with [tmux](https://github.com/tmux/tmux/wiki)
-- using zsh as a default system shell
-- having [oh-my-zsh](https://ohmyz.sh/) installed
-- having [karabiner-elements](https://karabiner-elements.pqrs.org/) installed as a keyboard remapper
-- using asdf as a languages version manager
-- installing neovim together with [kickstart config](https://github.com/nvim-lua/kickstart.nvim)
-- installing [oh-my-posh](https://ohmyposh.dev) for terminal prompt line configuration
+## What's included
+This repo contains a set of dotfile configurations that are working with mac OS 14 Sonoma
+Apps for which configuration is included:
+- [Alacritty](https://alacritty.org/) terminal with [zsh](https://www.zsh.org/) shell that uses [oh-my-zsh](https://ohmyz.sh/), [oh-my-posh](https://ohmyposh.dev) prompt and [tmux](https://github.com/tmux/tmux/wiki)
+- [karabiner-elements](https://karabiner-elements.pqrs.org/) keyboard remapper
+- [asdf](https://asdf-vm.com/) runtime version manager
+- [neovim](https://neovim.io/)
 
 ## Installing packages and apps with bootstrap script
-Most of required software mentioned above, together with others used by me, can be easily installed by running a shell script provided in this repo.
+`Singluarity` is a script that can be run to guide an installation of most of esential packages and apps (using brew and casks).
 
 Make sure script can be executed: `cd ~/sagittarius-a-star && chmod +x singularity.zsh`
 
@@ -32,11 +29,8 @@ Clone this repo to home directory
 
 `cd ~ && git clone git@github.com:hirokiraj/sagittarius-a-star.git`
 
-Install GNU stow
+Install GNU stow if 'singularity.sh' was not used
 `brew install stow`
-
-Move original `init.lua` from kickstart aside to make space
-`mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.original`
 
 And use stow to symlink all configs as if these are stow packages
 `cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux`
@@ -44,7 +38,7 @@ And use stow to symlink all configs as if these are stow packages
 ## Post setup actions
 If above setup was successful there are some additional manual steps that need to be done:
 
-**tmux** -> requires installing tpm and sourcing with it all the plugins mentioned in config:
+**tmux** -> requires installing tpm and sourcing all the plugins mentioned in config with it:
 
 Run `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`, open alacritty, run `tmux` and install plugins with `ctrl-b I` (capital i)
 
