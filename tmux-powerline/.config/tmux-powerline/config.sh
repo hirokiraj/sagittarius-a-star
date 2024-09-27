@@ -1,0 +1,6 @@
+export TMUX_POWERLINE_THEME="tmux-powerline-hirokiraj-1_0"
+export TMUX_POWERLINE_DIR_USER_THEMES="${XDG_CONFIG_HOME:-$HOME/.config}/tmux-powerline/themes"
+export TMUX_POWERLINE_DIR_USER_SEGMENTS="${XDG_CONFIG_HOME:-$HOME/.config}/tmux-powerline/segments"
+export TMUX_POWERLINE_STATUS_JUSTIFICATION="left"
+export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="short"
+export TMUX_POWERLINE_SEG_TMUX_SESSION_INFO_FORMAT="#S"

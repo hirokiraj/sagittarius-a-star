@@ -33,7 +33,7 @@ Install GNU stow if 'singularity.sh' was not used
 `brew install stow`
 
 And use stow to symlink all configs as if these are stow packages
-`cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux`
+`cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux tmux-powerline`
 
 ## Post setup actions
 If above setup was successful there are some additional manual steps that need to be done:
