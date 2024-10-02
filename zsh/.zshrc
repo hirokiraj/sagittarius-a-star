@@ -12,3 +12,6 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/hirokiraj_catppuccin_f
 
 # asdf script execution
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# personal aliases
+alias g="git status"
