@@ -3,6 +3,9 @@
 install_cli()
 {
     brew install asdf btop git imagemagick ncdu neovim oh-my-posh pre-commit stow tig tmux vim wget ripgrep lua;
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
     brew install cmatrix neofetch pipes-sh tty-clock switchaudio-osx nowplaying-cli;
     brew install koekeishiya/formulae/yabai
     brew install koekeishiya/formulae/skhd
@@ -57,7 +60,8 @@ echo "    tmux (terminal multiplicator)"
 echo "    vim (slightly worse text editor)" 
 echo "    wget (internet file fetcher)"
 echo "    ripgrep (used by telescope in neovim)"
-echo "    lua (explicit install, used (not only) by neovim and sketchybar)
+echo "    lua (explicit install, used (not only) by neovim and sketchybar)"
+echo "    oh-my-zsh (modular zsh plugins and improvements)"
 echo "   ---- Ricing stuff
 echo "    yabai (tiled window manager for osx)"
 echo "    skhd (keybinds deamon, used to control yabai)"
@@ -69,7 +73,7 @@ echo "    tty-clock (nice digital terminal clock)"
 echo "    switchaudio-osx (sketchybar uses it to detect/change audio ins/outs)"
 echo "    nowplaying-cli (sketchybar uses it to display whats being played)"
 echo "    sketchybar-app-font (for displaying app icons in sketchybar desktops spaces"
-echo "    SbarLua (sketchybar lua api plugin)
+echo "    SbarLua (sketchybar lua api plugin)"
 echo "  Do you wish to install all these packages?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
@@ -98,7 +102,7 @@ echo "    visual-studio-code (for really bad days)"
 echo "    docker (containers, as cask to have desktop control)"
 echo "    logitune (logitech camera controls)"
 echo "    gimp (raster graphics)"
-echo "    sketchybar fonts (sf-symbols, font-sf-mono and font-sf-pro)
+echo "    sketchybar fonts (sf-symbols, font-sf-mono and font-sf-pro)"
 echo "  Do you wish to install all of em?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
@@ -133,8 +137,7 @@ select yn in "Yes" "No" "Cancel"; do
 done
 echo "---------------------------------------------------"
 echo "Phase 5: manual installations"
-echo "  Consider installing these manually as there are no packages/casks:"
-echo "    oh-my-zsh (zshell improvements) - https://ohmyz.sh/#install"
+echo "  Consider installing these manually:"
 echo "    Kensington Works (trackball control) - https://www.kensington.com/software/kensingtonworks/"
 echo "    Firefox Developer Edition (another browser, for secondary accounts) - https://www.mozilla.org/en-US/firefox/developer/"
 echo "---------------------------------------------------"
