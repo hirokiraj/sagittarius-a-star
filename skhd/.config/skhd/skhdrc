@@ -1,0 +1,6 @@
+shift + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + alt - z : yabai -m window --toggle zoom-fullscreen
+shift + alt - b : yabai -m space --balance
+
+ctrl + alt - y : yabai --restart-service
+ctrl + alt - s : skhd --restart-service

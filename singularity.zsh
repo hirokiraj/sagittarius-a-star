@@ -4,11 +4,19 @@ brew_install_cli()
 {
     brew install asdf btop git imagemagick ncdu neovim oh-my-posh pre-commit stow tig tmux vim wget ripgrep;
     brew install cmatrix neofetch pipes-sh tty-clock;
+    brew install koekeishiya/formulae/yabai
+    brew install koekeishiya/formulae/skhd
 }
 
 brew_install_casks()
 {
     brew install --cask alacritty bruno firefox google-chrome karabiner-elements keepassxc keepingyouawake ngrok opera signal slack discord spotify visual-studio-code docker logitune gimp;
+}
+
+start_services()
+{
+    yabai --start-service
+    skhd --start-service
 }
 
 echo "---------------------------------------------------"
@@ -42,6 +50,8 @@ echo "    vim (slightly worse text editor)"
 echo "    wget (internet file fetcher)"
 echo "    ripgrep (used by telescope in neovim)"
 echo "   ---- Ricing stuff
+echo "    yabai (tiled window manager for osx)"
+echo "    skhd (keybinds deamon, used to control yabai)"
 echo "    cmatrix (terminal matrix like screensaver)"
 echo "    neofetch (show fancy system info)"
 echo "    pipes-sh (like old windows screensaver but in terminal)"
@@ -87,13 +97,26 @@ echo "Phase 3: symlinking dotfiles"
 echo "  Do you want to symlink all dotfiles using stow?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
-        Yes ) `cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux tmux-powerline`; break;;
+        Yes ) `cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux tmux-powerline yabai skhd`; break;;
         No ) break;;
         Cancel ) exit;;
     esac
 done
 echo "---------------------------------------------------"
-echo "Phase 4: manual installations"
+echo "Phase 4: starting services"
+echo "  Following services are about to be started"
+echo "    yabai (tiled window manager)"
+echo "    skhd (keybindings daemon used for controlling yabai)"
+echo "  Do you want to start services?"
+select yn in "Yes" "No" "Cancel"; do
+    case $yn in
+        Yes ) start_services; break;;
+        No ) break;;
+        Cancel ) exit;;
+    esac
+done
+echo "---------------------------------------------------"
+echo "Phase 5: manual installations"
 echo "  Consider installing these manually as there are no packages/casks:"
 echo "    oh-my-zsh (zshell improvements) - https://ohmyz.sh/#install"
 echo "    Kensington Works (trackball control) - https://www.kensington.com/software/kensingtonworks/"
