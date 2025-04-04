@@ -6,28 +6,20 @@ install_cli()
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-    brew install cmatrix neofetch pipes-sh tty-clock switchaudio-osx nowplaying-cli;
-    brew install koekeishiya/formulae/yabai
-    brew install koekeishiya/formulae/skhd
-    brew tap FelixKratz/formulae
-    brew install sketchybar
-
-    curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.5/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
-
-    (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
+    brew install cmatrix neofetch pipes-sh tty-clock;
+    brew install koekeishiya/formulae/yabai;
+    brew install koekeishiya/formulae/skhd;
 }
 
 brew_install_casks()
 {
     brew install --cask alacritty bruno firefox google-chrome karabiner-elements keepassxc keepingyouawake ngrok opera signal slack discord spotify visual-studio-code docker logitune gimp;
-    brew install --cask sf-symbols homebrew/cask-fonts/font-sf-mono homebrew/cask-fonts/font-sf-pro
 }
 
 start_services()
 {
     yabai --start-service
     skhd --start-service
-    brew services restart sketchybar
 }
 
 echo "---------------------------------------------------"
@@ -65,15 +57,10 @@ echo "    oh-my-zsh (modular zsh plugins and improvements)"
 echo "   ---- Ricing stuff
 echo "    yabai (tiled window manager for osx)"
 echo "    skhd (keybinds deamon, used to control yabai)"
-echo "    sketchybar (replacement for osx top bar)"
 echo "    cmatrix (terminal matrix like screensaver)"
 echo "    neofetch (show fancy system info)"
 echo "    pipes-sh (like old windows screensaver but in terminal)"
 echo "    tty-clock (nice digital terminal clock)"
-echo "    switchaudio-osx (sketchybar uses it to detect/change audio ins/outs)"
-echo "    nowplaying-cli (sketchybar uses it to display whats being played)"
-echo "    sketchybar-app-font (for displaying app icons in sketchybar desktops spaces"
-echo "    SbarLua (sketchybar lua api plugin)"
 echo "  Do you wish to install all these packages?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
@@ -102,7 +89,6 @@ echo "    visual-studio-code (for really bad days)"
 echo "    docker (containers, as cask to have desktop control)"
 echo "    logitune (logitech camera controls)"
 echo "    gimp (raster graphics)"
-echo "    sketchybar fonts (sf-symbols, font-sf-mono and font-sf-pro)"
 echo "  Do you wish to install all of em?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
@@ -116,7 +102,7 @@ echo "Phase 3: symlinking dotfiles"
 echo "  Do you want to symlink all dotfiles using stow?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
-        Yes ) `cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux tmux-powerline yabai skhd sketchybar`; break;;
+        Yes ) `cd ~/sagittarius-a-star && stow alacritty asdf karabiner vim zsh nvim oh-my-posh tmux tmux-powerline yabai skhd`; break;;
         No ) break;;
         Cancel ) exit;;
     esac
@@ -126,7 +112,6 @@ echo "Phase 4: starting services"
 echo "  Following services are about to be started"
 echo "    yabai (tiled window manager)"
 echo "    skhd (keybindings daemon used for controlling yabai)"
-echo "    sketchybar (osx top bar replacement)"
 echo "  Do you want to start services?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
