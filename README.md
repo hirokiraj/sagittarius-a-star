@@ -21,7 +21,7 @@ Manual or modular installation - pls refer to [Singularity](singularity.zsh) and
 
 - `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 - `tmux` 
-- Press`ctrl-b I` (capital i)
+- Press `ctrl-b I` (capital i)
 
 Your are good to go!
 

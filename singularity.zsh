@@ -6,14 +6,13 @@ install_cli()
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-    brew install cmatrix neofetch pipes-sh tty-clock;
     brew install koekeishiya/formulae/yabai;
     brew install koekeishiya/formulae/skhd;
 }
 
 brew_install_casks()
 {
-    brew install --cask alacritty bruno firefox google-chrome karabiner-elements keepassxc keepingyouawake ngrok opera signal slack discord spotify visual-studio-code docker logitune gimp;
+    brew install --cask alacritty bruno firefox google-chrome karabiner-elements keepassxc keepingyouawake opera signal slack discord spotify visual-studio-code logitune bluesnooze;
 }
 
 start_services()
@@ -36,32 +35,7 @@ then
 fi
 echo "---------------------------------------------------"
 echo "Phase 1: installing CLI packages"
-echo "  Following packages are about to be installed:"
-echo "   ---- CLI tools
-echo "    asdf (global versions manager)"
-echo "    btop (activity monitor)"
-echo "    git (revision control system)"
-echo "    imagemagick (image manipulation cli tool)"
-echo "    ncdu (disk space analyser)"
-echo "    neovim (text editor)"
-echo "    oh-my-posh (terminal prompt styler)"
-echo "    pre-commit (run commands as git hooks)" 
-echo "    stow (symlink dotfiles manager)" 
-echo "    tig (git repo cli explorer)" 
-echo "    tmux (terminal multiplicator)" 
-echo "    vim (slightly worse text editor)" 
-echo "    wget (internet file fetcher)"
-echo "    ripgrep (used by telescope in neovim)"
-echo "    lua (explicit install, used (not only) by neovim and sketchybar)"
-echo "    oh-my-zsh (modular zsh plugins and improvements)"
-echo "   ---- Ricing stuff
-echo "    yabai (tiled window manager for osx)"
-echo "    skhd (keybinds deamon, used to control yabai)"
-echo "    cmatrix (terminal matrix like screensaver)"
-echo "    neofetch (show fancy system info)"
-echo "    pipes-sh (like old windows screensaver but in terminal)"
-echo "    tty-clock (nice digital terminal clock)"
-echo "  Do you wish to install all these packages?"
+echo "  Do you want to install all CLI and ricing packages?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
         Yes ) install_cli; break;;
@@ -71,25 +45,7 @@ select yn in "Yes" "No" "Cancel"; do
 done
 echo "---------------------------------------------------"
 echo "Phase 2: installing casks"
-echo "  Following applications are about to be installed:"
-echo "    alacritty (terminal)"
-echo "    bruno (REST client)"
-echo "    firefox (main browser)"
-echo "    google-chrome (browser potentially for web-dev)"
-echo "    karabiner-elements (keyboard remapper)"
-echo "    keepassxc (password manager)"
-echo "    keepingyouawake (status bar sleep control)"
-echo "    ngrok (traffic tunneling)"
-echo "    opera (browser for the lulz)"
-echo "    signal (comms)"
-echo "    slack (comms)"
-echo "    discord (comms)"
-echo "    spotify (music player)"
-echo "    visual-studio-code (for really bad days)"
-echo "    docker (containers, as cask to have desktop control)"
-echo "    logitune (logitech camera controls)"
-echo "    gimp (raster graphics)"
-echo "  Do you wish to install all of em?"
+echo "  Do you want to install all casks?"
 select yn in "Yes" "No" "Cancel"; do
     case $yn in
         Yes ) brew_install_casks; break;;
@@ -125,6 +81,10 @@ echo "Phase 5: manual installations"
 echo "  Consider installing these manually:"
 echo "    Kensington Works (trackball control) - https://www.kensington.com/software/kensingtonworks/"
 echo "    Firefox Developer Edition (another browser, for secondary accounts) - https://www.mozilla.org/en-US/firefox/developer/"
+echo "  Tmux requires installing tpm and sourcing all the plugins:"
+echo "    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
+echo "    tmux"
+echo "    Press ctrl-b I (capital i)"
 echo "---------------------------------------------------"
 echo "That's it im done!"
 echo "GL&HF using new one!"
