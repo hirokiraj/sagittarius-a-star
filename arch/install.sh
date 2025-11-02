@@ -12,8 +12,7 @@ cd /tmp/yay && makepkg -si --noconfirm
 yay --version
 cd ~ && rm -rf /tmp/yay
 
-yay -S --needed --noconfirm protonplus heroic-games-launcher-bin mangohud lib32-mangohud xpadneo-dkms asdf-vm oh-my-posh spotify
-
+yay -S --needed --noconfirm protonplus heroic-games-launcher-bin mangohud lib32-mangohud xpadneo-dkms asdf-vm oh-my-posh spotify ttf-symbola noto-fonts-cjk noto-fonts-emoji ttf-twemoji
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 sudo chsh -s $(which zsh) hirokiraj
 
@@ -23,6 +22,7 @@ cd ~ && git clone https://github.com/hirokiraj/sagittarius-a-star.git
 rm .zshrc
 cd ~/sagittarius-a-star && stow alacritty asdf vim zsh nvim oh-my-posh tmux tmux-powerline
 mkdir ~/.config/discord && echo “{\n \”SKIP_HOST_UPDATE\”: true\n}” >~/.config/discord/settings.json
+sudo ln -s /usr/share/fontconfig/conf.avail/75-twemoji.conf /etc/fonts/conf.d/
 
 sudo mkdir /mnt/zangetsu /mnt/shared_data
 echo "/dev/nvme1n1p3 /mnt/zangetsu ntfs-3g nofail 0 0" | sudo tee -a /etc/fstab
